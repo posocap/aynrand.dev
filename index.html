@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10151b">
+    <meta name="description" content="Ayn Rand for the builders of the digital world. A new perspective is coming.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%2310151b%22/%3E%3Ctext x=%224%22 y=%2228%22 fill=%22%23d7ad68%22 font-size=%2220%22%3EAR%3C/text%3E%3C/svg%3E">
+    <title>Ayn Rand for the Builders of the Digital World</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Georgia, "Times New Roman", serif;
+        background: #10151b;
+        color: #f5f0e5;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        --gold: #d7ad68;
+        --muted: #aaa9a4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        overflow-x: hidden;
+        background:
+          radial-gradient(ellipse at 76% 57%, rgb(91 72 49 / 21%), transparent 37rem),
+          linear-gradient(135deg, #10151b 0%, #171a1c 56%, #11161b 100%);
+      }
+
+      .page {
+        position: relative;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        isolation: isolate;
+      }
+
+      .page::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background: linear-gradient(90deg, #10151b 0%, rgb(16 21 27 / 94%) 36%, rgb(16 21 27 / 20%) 100%);
+        content: "";
+      }
+
+      .architecture {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        right: 0;
+        width: min(76vw, 1040px);
+        height: 100%;
+        min-height: 700px;
+        opacity: .8;
+      }
+
+      header,
+      main,
+      footer {
+        width: min(100% - 9vw, 1440px);
+        margin-inline: auto;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 34px;
+      }
+
+      .wordmark {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        color: #f5f0e5;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .73rem;
+        font-weight: 600;
+        letter-spacing: .2em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .monogram {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 1px solid rgb(215 173 104 / 65%);
+        color: var(--gold);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1rem;
+        letter-spacing: -.08em;
+      }
+
+      .header-note,
+      footer {
+        color: var(--muted);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .66rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+      }
+
+      main {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        padding-block: 80px 110px;
+      }
+
+      .intro {
+        max-width: 740px;
+        padding-block: 8vh;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin: 0 0 28px;
+        color: var(--gold);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .69rem;
+        font-weight: 600;
+        letter-spacing: .23em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 33px;
+        height: 1px;
+        background: var(--gold);
+        content: "";
+      }
+
+      h1 {
+        max-width: 740px;
+        margin: 0;
+        font-size: clamp(3rem, 7vw, 6.7rem);
+        font-weight: 400;
+        letter-spacing: -.055em;
+        line-height: .99;
+        text-wrap: balance;
+      }
+
+      h1 span {
+        color: var(--gold);
+        font-style: italic;
+      }
+
+      .description {
+        max-width: 440px;
+        margin: 29px 0 0;
+        color: #c3c0b9;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(.98rem, 1.4vw, 1.1rem);
+        line-height: 1.8;
+      }
+
+      .coming-soon {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        margin-top: 37px;
+        padding: 14px 18px;
+        border: 1px solid rgb(215 173 104 / 50%);
+        color: #f5f0e5;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .68rem;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+      }
+
+      .coming-soon::before {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        box-shadow: 0 0 12px rgb(215 173 104 / 75%);
+        content: "";
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-block: 22px 27px;
+        border-top: 1px solid rgb(245 240 229 / 13%);
+      }
+
+      footer span:last-child {
+        color: var(--gold);
+      }
+
+      @media (max-width: 700px) {
+        .architecture {
+          top: 15%;
+          right: -40%;
+          width: 125%;
+          height: 85%;
+          min-height: 580px;
+          opacity: .53;
+        }
+
+        .page::before {
+          background: linear-gradient(90deg, rgb(16 21 27 / 97%) 0%, rgb(16 21 27 / 83%) 58%, rgb(16 21 27 / 38%) 100%);
+        }
+
+        header,
+        main,
+        footer {
+          width: min(100% - 44px, 1440px);
+        }
+
+        header {
+          padding-block: 23px;
+        }
+
+        .wordmark {
+          font-size: .62rem;
+        }
+
+        .monogram {
+          width: 35px;
+          height: 35px;
+        }
+
+        .header-note {
+          max-width: 110px;
+          font-size: .57rem;
+          line-height: 1.6;
+          text-align: right;
+        }
+
+        main {
+          padding-block: 42px 75px;
+        }
+
+        .intro {
+          padding-block: 6vh;
+        }
+
+        h1 {
+          font-size: clamp(3.2rem, 13vw, 5rem);
+        }
+
+        footer {
+          font-size: .55rem;
+          letter-spacing: .11em;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: .01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: .01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <svg class="architecture" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="tower" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#b99768" stop-opacity=".04"/>
+            <stop offset=".48" stop-color="#d5b177" stop-opacity=".2"/>
+            <stop offset="1" stop-color="#e2c18c" stop-opacity=".03"/>
+          </linearGradient>
+          <linearGradient id="edge" x1="0" x2="1">
+            <stop stop-color="#ddbb83" stop-opacity="0"/>
+            <stop offset=".5" stop-color="#ddbb83" stop-opacity=".72"/>
+            <stop offset="1" stop-color="#ddbb83" stop-opacity=".08"/>
+          </linearGradient>
+        </defs>
+        <g fill="url(#tower)" stroke="url(#edge)" stroke-width="1.2">
+          <path d="M470 1000 545 250 610 85 678 250 746 1000Z"/>
+          <path d="m610 85 3-76 6 76m-74 165h133m-148 45h164m-168 52h174m-179 60h186m-192 68h198m-205 76h211m-219 84h225m-233 95h240m-248 106h255"/>
+          <path d="m545 250 201 750M678 250l-208 750"/>
+          <path d="M719 1000 770 460 818 330 866 460 916 1000Z"/>
+          <path d="m818 330 2-65 4 65m-45 130h91m-97 42h103m-109 52h115m-121 62h127m-134 73h140m-147 84h153m-160 98h166"/>
+          <path d="m770 460 146 540m-50-540-147 540"/>
+          <path d="M280 1000 324 550 365 445 407 550 449 1000Z"/>
+          <path d="m365 445 2-56 4 56m-39 105h68m-73 43h78m-82 49h87m-91 57h96m-101 67h105m-110 80h114m-119 96h123"/>
+          <path d="m324 550 125 450m-42-450-127 450"/>
+        </g>
+        <path d="M0 927h1000" stroke="#d7ad68" stroke-opacity=".23"/>
+        <path d="M0 953h1000" stroke="#d7ad68" stroke-opacity=".1"/>
+      </svg>
+      <header>
+        <a class="wordmark" href="#" aria-label="Ayn Rand for the builders of the digital world">
+          <span class="monogram" aria-hidden="true">AR</span>
+          <span>Ayn Rand<br>for the digital world</span>
+        </a>
+        <span class="header-note">An independent project</span>
+      </header>
+      <main>
+        <section class="intro" aria-labelledby="headline">
+          <p class="eyebrow">For the builders</p>
+          <h1 id="headline">Ayn Rand for the <span>digital world.</span></h1>
+          <p class="description">Ideas for a world shaped by independent minds, bold ambition, and the courage to create.</p>
+          <div class="coming-soon">A new perspective is coming</div>
+        </section>
+      </main>
+      <footer>
+        <span>Coming soon</span>
+        <span>Ideas · Independence · Creation</span>
+      </footer>
+    </div>
+  </body>
+</html>

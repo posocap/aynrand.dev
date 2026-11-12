@@ -3,321 +3,291 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#10151b">
-    <meta name="description" content="Ayn Rand for the builders of the digital world. A new perspective is coming.">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%2310151b%22/%3E%3Ctext x=%224%22 y=%2228%22 fill=%22%23d7ad68%22 font-size=%2220%22%3EAR%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#101820">
+    <meta name="description" content="An independent project exploring Ayn Rand's ideas for developers, builders, and technologists.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23101820%22/%3E%3Ctext x=%224%22 y=%2228%22 fill=%22%23d7ad68%22 font-size=%2220%22%3EAR%3C/text%3E%3C/svg%3E">
     <title>Ayn Rand for the Builders of the Digital World</title>
     <style>
       :root {
         color-scheme: dark;
         font-family: Georgia, "Times New Roman", serif;
-        background: #10151b;
+        background: #101820;
         color: #f5f0e5;
         font-synthesis: none;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         --gold: #d7ad68;
-        --muted: #aaa9a4;
+        --cyan: #66d8f2;
+        --muted: #b7c0c5;
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         min-width: 320px;
-        min-height: 100vh;
         margin: 0;
-        overflow-x: hidden;
-        background:
-          radial-gradient(ellipse at 76% 57%, rgb(91 72 49 / 21%), transparent 37rem),
-          linear-gradient(135deg, #10151b 0%, #171a1c 56%, #11161b 100%);
+        background: #101820;
       }
 
-      .page {
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--cyan);
+        outline-offset: 5px;
+      }
+
+      .hero {
         position: relative;
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-        isolation: isolate;
+        background: #101820;
       }
 
-      .page::before {
+      .hero-art {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .site-header {
         position: absolute;
-        z-index: -1;
-        inset: 0;
-        background: linear-gradient(90deg, #10151b 0%, rgb(16 21 27 / 94%) 36%, rgb(16 21 27 / 20%) 100%);
-        content: "";
-      }
-
-      .architecture {
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        right: 0;
-        width: min(76vw, 1040px);
-        height: 100%;
-        min-height: 700px;
-        opacity: .8;
-      }
-
-      header,
-      main,
-      footer {
-        width: min(100% - 9vw, 1440px);
-        margin-inline: auto;
-      }
-
-      header {
+        inset: 0 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-block: 34px;
+        padding: 28px clamp(22px, 5vw, 76px);
+        background: linear-gradient(180deg, rgb(8 18 25 / 68%), transparent);
+        font-family: Arial, Helvetica, sans-serif;
       }
 
       .wordmark {
         display: flex;
         align-items: center;
-        gap: 13px;
+        gap: 12px;
         color: #f5f0e5;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: .73rem;
+        font-size: .72rem;
         font-weight: 600;
-        letter-spacing: .2em;
+        letter-spacing: .16em;
+        line-height: 1.5;
         text-decoration: none;
         text-transform: uppercase;
       }
 
       .monogram {
         display: grid;
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
         place-items: center;
-        border: 1px solid rgb(215 173 104 / 65%);
+        border: 1px solid rgb(215 173 104 / 75%);
         color: var(--gold);
         font-family: Georgia, "Times New Roman", serif;
         font-size: 1rem;
         letter-spacing: -.08em;
       }
 
-      .header-note,
-      footer {
-        color: var(--muted);
-        font-family: Arial, Helvetica, sans-serif;
+      .header-link {
+        padding: 11px 15px;
+        border: 1px solid rgb(102 216 242 / 65%);
+        color: #e7f8fb;
         font-size: .66rem;
-        letter-spacing: .16em;
+        letter-spacing: .12em;
+        text-decoration: none;
         text-transform: uppercase;
+        transition: background-color .2s ease, color .2s ease;
       }
 
-      main {
-        display: flex;
-        flex: 1;
-        align-items: center;
-        padding-block: 80px 110px;
+      .header-link:hover {
+        background: var(--cyan);
+        color: #101820;
       }
 
-      .intro {
-        max-width: 740px;
-        padding-block: 8vh;
+      .ideas {
+        width: min(100% - 48px, 1120px);
+        margin-inline: auto;
+        padding-block: clamp(72px, 10vw, 142px);
       }
 
       .eyebrow {
         display: flex;
         align-items: center;
-        gap: 13px;
-        margin: 0 0 28px;
-        color: var(--gold);
+        gap: 12px;
+        margin: 0 0 22px;
+        color: var(--cyan);
         font-family: Arial, Helvetica, sans-serif;
-        font-size: .69rem;
+        font-size: .7rem;
         font-weight: 600;
-        letter-spacing: .23em;
+        letter-spacing: .2em;
         text-transform: uppercase;
       }
 
       .eyebrow::before {
-        width: 33px;
+        width: 30px;
         height: 1px;
-        background: var(--gold);
+        background: var(--cyan);
         content: "";
       }
 
       h1 {
-        max-width: 740px;
+        max-width: 780px;
         margin: 0;
-        font-size: clamp(3rem, 7vw, 6.7rem);
+        font-size: clamp(2.7rem, 6vw, 5.5rem);
         font-weight: 400;
-        letter-spacing: -.055em;
-        line-height: .99;
+        letter-spacing: -.045em;
+        line-height: 1.02;
         text-wrap: balance;
       }
 
-      h1 span {
-        color: var(--gold);
-        font-style: italic;
-      }
-
-      .description {
-        max-width: 440px;
-        margin: 29px 0 0;
-        color: #c3c0b9;
+      .lead {
+        max-width: 660px;
+        margin: 25px 0 0;
+        color: #c4cbd0;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: clamp(.98rem, 1.4vw, 1.1rem);
+        font-size: clamp(1rem, 1.6vw, 1.15rem);
         line-height: 1.8;
       }
 
-      .coming-soon {
-        display: inline-flex;
-        align-items: center;
-        gap: 11px;
-        margin-top: 37px;
-        padding: 14px 18px;
-        border: 1px solid rgb(215 173 104 / 50%);
-        color: #f5f0e5;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: .68rem;
-        letter-spacing: .15em;
-        text-transform: uppercase;
+      .principles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-top: 64px;
       }
 
-      .coming-soon::before {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: var(--gold);
-        box-shadow: 0 0 12px rgb(215 173 104 / 75%);
-        content: "";
+      .principle {
+        padding-top: 20px;
+        border-top: 1px solid rgb(102 216 242 / 35%);
+      }
+
+      .principle h2 {
+        margin: 0;
+        color: var(--gold);
+        font-size: 1.45rem;
+        font-weight: 400;
+      }
+
+      .principle p {
+        margin: 11px 0 0;
+        color: var(--muted);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .95rem;
+        line-height: 1.7;
       }
 
       footer {
         display: flex;
         justify-content: space-between;
         gap: 20px;
-        padding-block: 22px 27px;
+        padding: 23px max(24px, calc((100% - 1120px) / 2));
         border-top: 1px solid rgb(245 240 229 / 13%);
+        color: var(--muted);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .65rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
       }
 
       footer span:last-child {
         color: var(--gold);
       }
 
-      @media (max-width: 700px) {
-        .architecture {
-          top: 15%;
-          right: -40%;
-          width: 125%;
-          height: 85%;
-          min-height: 580px;
-          opacity: .53;
-        }
-
-        .page::before {
-          background: linear-gradient(90deg, rgb(16 21 27 / 97%) 0%, rgb(16 21 27 / 83%) 58%, rgb(16 21 27 / 38%) 100%);
-        }
-
-        header,
-        main,
-        footer {
-          width: min(100% - 44px, 1440px);
-        }
-
-        header {
-          padding-block: 23px;
+      @media (max-width: 650px) {
+        .site-header {
+          padding: 16px 18px;
         }
 
         .wordmark {
-          font-size: .62rem;
+          gap: 8px;
+          font-size: .58rem;
+          letter-spacing: .1em;
         }
 
         .monogram {
-          width: 35px;
-          height: 35px;
+          width: 32px;
+          height: 32px;
         }
 
-        .header-note {
-          max-width: 110px;
-          font-size: .57rem;
-          line-height: 1.6;
-          text-align: right;
+        .header-link {
+          padding: 9px 10px;
+          font-size: .55rem;
+          letter-spacing: .08em;
         }
 
-        main {
-          padding-block: 42px 75px;
+        .ideas {
+          width: min(100% - 40px, 1120px);
         }
 
-        .intro {
-          padding-block: 6vh;
-        }
-
-        h1 {
-          font-size: clamp(3.2rem, 13vw, 5rem);
+        .principles {
+          grid-template-columns: 1fr;
+          gap: 28px;
+          margin-top: 46px;
         }
 
         footer {
-          font-size: .55rem;
-          letter-spacing: .11em;
+          flex-direction: column;
+          gap: 10px;
+          font-size: .58rem;
         }
       }
 
       @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
         *,
         *::before,
         *::after {
-          scroll-behavior: auto !important;
-          animation-duration: .01ms !important;
-          animation-iteration-count: 1 !important;
           transition-duration: .01ms !important;
         }
       }
     </style>
   </head>
   <body>
-    <div class="page">
-      <svg class="architecture" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="tower" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stop-color="#b99768" stop-opacity=".04"/>
-            <stop offset=".48" stop-color="#d5b177" stop-opacity=".2"/>
-            <stop offset="1" stop-color="#e2c18c" stop-opacity=".03"/>
-          </linearGradient>
-          <linearGradient id="edge" x1="0" x2="1">
-            <stop stop-color="#ddbb83" stop-opacity="0"/>
-            <stop offset=".5" stop-color="#ddbb83" stop-opacity=".72"/>
-            <stop offset="1" stop-color="#ddbb83" stop-opacity=".08"/>
-          </linearGradient>
-        </defs>
-        <g fill="url(#tower)" stroke="url(#edge)" stroke-width="1.2">
-          <path d="M470 1000 545 250 610 85 678 250 746 1000Z"/>
-          <path d="m610 85 3-76 6 76m-74 165h133m-148 45h164m-168 52h174m-179 60h186m-192 68h198m-205 76h211m-219 84h225m-233 95h240m-248 106h255"/>
-          <path d="m545 250 201 750M678 250l-208 750"/>
-          <path d="M719 1000 770 460 818 330 866 460 916 1000Z"/>
-          <path d="m818 330 2-65 4 65m-45 130h91m-97 42h103m-109 52h115m-121 62h127m-134 73h140m-147 84h153m-160 98h166"/>
-          <path d="m770 460 146 540m-50-540-147 540"/>
-          <path d="M280 1000 324 550 365 445 407 550 449 1000Z"/>
-          <path d="m365 445 2-56 4 56m-39 105h68m-73 43h78m-82 49h87m-91 57h96m-101 67h105m-110 80h114m-119 96h123"/>
-          <path d="m324 550 125 450m-42-450-127 450"/>
-        </g>
-        <path d="M0 927h1000" stroke="#d7ad68" stroke-opacity=".23"/>
-        <path d="M0 953h1000" stroke="#d7ad68" stroke-opacity=".1"/>
-      </svg>
-      <header>
-        <a class="wordmark" href="#" aria-label="Ayn Rand for the builders of the digital world">
+    <section class="hero" id="top" aria-label="Ayn Rand for developers, builders, and technologists">
+      <img
+        class="hero-art"
+        src="https://github.com/user-attachments/assets/bfdb62c5-33a9-4fed-a665-f3a3224a5d0e"
+        alt="Ayn Rand beside a rising city and glowing technology, with her books and the words: for developers, builders, and technologists."
+        fetchpriority="high"
+      >
+      <header class="site-header">
+        <a class="wordmark" href="#top" aria-label="Ayn Rand for the digital world, home">
           <span class="monogram" aria-hidden="true">AR</span>
           <span>Ayn Rand<br>for the digital world</span>
         </a>
-        <span class="header-note">An independent project</span>
+        <a class="header-link" href="#ideas">Explore the ideas</a>
       </header>
-      <main>
-        <section class="intro" aria-labelledby="headline">
-          <p class="eyebrow">For the builders</p>
-          <h1 id="headline">Ayn Rand for the <span>digital world.</span></h1>
-          <p class="description">Ideas for a world shaped by independent minds, bold ambition, and the courage to create.</p>
-          <div class="coming-soon">A new perspective is coming</div>
-        </section>
-      </main>
-      <footer>
-        <span>Coming soon</span>
-        <span>Ideas · Independence · Creation</span>
-      </footer>
-    </div>
+    </section>
+    <main>
+      <section class="ideas" id="ideas" aria-labelledby="headline">
+        <p class="eyebrow">For the builders</p>
+        <h1 id="headline">A philosophy for those who create the future.</h1>
+        <p class="lead">Explore an independent perspective on reason, individualism, and the creative work shaping our digital world.</p>
+        <div class="principles">
+          <article class="principle">
+            <h2>Reason</h2>
+            <p>Start with facts. Ask clear questions, think critically, and follow evidence wherever it leads.</p>
+          </article>
+          <article class="principle">
+            <h2>Independence</h2>
+            <p>Value the judgment and agency of people who choose their own goals and take responsibility for their work.</p>
+          </article>
+          <article class="principle">
+            <h2>Creation</h2>
+            <p>See technology as a human achievement—and building as an act of imagination, effort, and purpose.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>An independent project</span>
+      <span>Reason · Independence · Creation</span>
+    </footer>
   </body>
 </html>
